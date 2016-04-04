@@ -58,4 +58,70 @@ public class Solutions {
 		}
 
 	}
+
+	public static class Staircase {
+
+		public void solve() {
+			Scanner s = new Scanner(System.in);
+
+			int n = s.nextInt();
+
+			for (int i = 0; i < n; i++) {
+
+				for (int j = 0; j < n - i - 1; j++) {
+					System.out.print(" ");
+				}
+
+				for (int k = 0; k < i + 1; k++)
+					System.out.print("#");
+
+				System.out.print("\n");
+			}
+		}
+	}
+
+	public static class TimeConversion {
+
+		public void solve() {
+
+			Scanner sc = new Scanner(System.in);
+			String input = sc.nextLine();
+
+			String hour = input.substring(0, 2);
+			String time = input.substring(input.length() - 2, input.length());
+
+			StringBuilder sb = new StringBuilder();
+			if (time.equals("PM")) {
+				int hourVal = Integer.parseInt(hour);
+				String hourStr;
+
+				if (hourVal < 12) {
+					hourVal += 12;
+
+				}
+
+				hourStr = Integer.toString(hourVal);
+
+				sb.append(hourStr + input.substring(2, input.length() - 2));
+			} else {
+				int hourVal = Integer.parseInt(hour);
+
+				String hourStr = Integer.toString(hourVal);
+
+				if (hourVal == 12) {
+					hourVal = 0;
+					hourStr = "0";
+				}
+
+				if (hourVal < 10) {
+					hourStr = "0" + hourVal;
+				}
+
+				sb.append(hourStr + input.substring(2, input.length() - 2));
+			}
+
+			System.out.println(sb.toString());
+
+		}
+	}
 }
