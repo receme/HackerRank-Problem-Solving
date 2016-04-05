@@ -2,6 +2,86 @@ import java.util.Scanner;
 
 public class Solutions {
 
+	public static class SherlockAndTheBeast {
+
+		public void solve() {
+			Scanner sc = new Scanner(System.in);
+
+			int cas = sc.nextInt();
+
+			for (int i = 0; i < cas; i++) {
+
+				int n = sc.nextInt();
+
+				if (n < 3) {
+					System.out.println("-1");
+				} else {
+
+					int countOfFive, countOfThree;
+
+					if (n % 3 == 0) {
+						countOfFive = n;
+						countOfThree = 0;
+					} else if (n != 5 && n < 8) {
+						System.out.println("-1");
+						continue;
+					} else {
+						countOfThree = n % 3;
+
+						countOfFive = n - countOfThree;
+
+						while (!(countOfFive % 3 == 0 && countOfThree % 5 == 0)) {
+							countOfFive -= 3;
+							countOfThree += 3;
+						}
+
+					}
+
+					for (int j = 0; j < countOfFive; j++) {
+						System.out.print("5");
+					}
+					for (int j = 0; j < countOfThree; j++) {
+						System.out.print("3");
+					}
+
+					System.out.println("");
+
+				}
+
+			}
+
+		}
+	}
+
+	public static class AngryProfessor {
+
+		public void solve() {
+			Scanner sc = new Scanner(System.in);
+
+			int cas = sc.nextInt();
+
+			for (int t = 0; t < cas; t++) {
+
+				int n = sc.nextInt();
+				int k = sc.nextInt();
+
+				int c = 0;
+				for (int i = 0; i < n; i++) {
+					int val = sc.nextInt();
+					if (val <= 0)
+						c++;
+				}
+
+				if (c >= k) {
+					System.out.println("NO");
+				} else {
+					System.out.println("YES");
+				}
+
+			}
+		}
+	}
+
 	public static class PlusMinus {
 
 		public void solve(Scanner sc) {

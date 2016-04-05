@@ -8,9 +8,7 @@ public class Main {
 		/*
 		 * Enter your code here. Read input from STDIN. Print output to STDOUT.
 		 * Your class should be named Solution.
-		 */
-		
-		
+		 */		
 	}
 
 	public static class MyUtils {
@@ -18,14 +16,12 @@ public class Main {
 		public static void printInt(int val) {
 			System.out.println(val);
 		}
-		
+
 		public static void printString(String val) {
 			System.out.println(val);
 		}
 
 	}
-	
-	
 
 	
 
