@@ -1,6 +1,133 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
+
 public class Solutions {
+
+
+	public static class FindDigits {
+
+		public void solve() {
+			Scanner sc = new Scanner(System.in);
+
+			int cas = sc.nextInt();
+
+			for (int t = 0; t < cas; t++) {
+				long n = sc.nextLong();
+
+				String s = Long.toString(n);
+
+				int count = 0;
+				for (int i = 0; i < s.length(); i++) {
+					int val = Integer.parseInt(s.charAt(i) + "");
+
+					if (val == 0)
+						continue;
+
+					if (n % val == 0)
+						count++;
+				}
+
+				System.out.println(count);
+			}
+		}
+	}
+
+	// not ac... tle
+	public static class SherlockAndSquares {
+
+		Map<Long, Long> map = new HashMap<>();
+
+		public void solve() {
+
+			Scanner sc = new Scanner(System.in);
+
+			int cas = sc.nextInt();
+
+			for (int t = 0; t < cas; t++) {
+
+				long m = sc.nextLong();
+
+				long n = sc.nextLong();
+
+				long sum1 = getSqureNumberCount(m);
+				long sum2 = getSqureNumberCount(n);
+
+				long sq = (long) Math.sqrt(m);
+				// MyUtils.printString(sum1+" "+sum2);
+
+				if (sq * sq == m) {
+					System.out.println(sum2 - sum1 + 1);
+				} else {
+					System.out.println(sum2 - sum1);
+				}
+
+				// if (m == n && sq * sq == m) {
+				// System.out.println(sum2 - sum1 + 1);
+				//
+				// } else {
+				//
+				// MyUtils.printString(sum1+" "+sum2);
+				//
+				//
+				// System.out.println(sum2 - sum1);
+				// }
+
+			}
+
+		}
+
+		long getSqureNumberCount(long n) {
+
+			if (map.containsKey(n)) {
+
+				return map.get(n);
+
+			}
+
+			else {
+
+				long count = 0;
+
+				for (long l = n; l >= 1; l--) {
+
+					if (map.containsKey(l)) {
+						count += map.get(l);
+
+						map.put(n, count);
+						// break;
+					} else {
+						long sq = (long) Math.sqrt(l);
+
+						if (sq * sq == l) {
+
+							count++;
+							// map.put(l, count);
+						}
+					}
+				}
+
+				// for (long l = 1; l <= n; l += 1) {
+				//
+				// long sq = (long) Math.sqrt(l);
+				//
+				// if (sq * sq == l) {
+				//
+				// count++;
+				// }
+				//
+				// map.put(l, count);
+				//
+				// }
+
+				return count;
+
+			}
+
+		}
+
+	}
 
 	public static class SherlockAndTheBeast {
 

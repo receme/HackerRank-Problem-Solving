@@ -2,13 +2,13 @@ import java.io.*;
 import java.util.*;
 import java.math.*;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 public class Main {
 
 	public static void main(String[] args) {
-		/*
-		 * Enter your code here. Read input from STDIN. Print output to STDOUT.
-		 * Your class should be named Solution.
-		 */		
+
+		
 	}
 
 	public static class MyUtils {
@@ -22,6 +22,8 @@ public class Main {
 		}
 
 	}
+	
+	
 
 	
 
