@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -6,6 +7,96 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Solutions {
+
+	public static class ExtraLongFactorials {
+
+		public void solve() {
+
+			Scanner sc = new Scanner(System.in);
+
+			int N = sc.nextInt();
+
+			BigInteger ans = new BigInteger("1");
+
+			for (int i = 2; i <= N; i++) {
+
+				ans = ans.multiply(new BigInteger(i + ""));
+			}
+
+			System.out.println(ans.toString());
+
+		}
+	}
+
+	public static class ChocolateFeast {
+
+		public void solve() {
+
+			Scanner sc = new Scanner(System.in);
+			int cas = sc.nextInt();
+
+			for (int t = 0; t < cas; t++) {
+				int m = sc.nextInt();
+				int n = sc.nextInt();
+				int p = sc.nextInt();
+
+				int total = m / n;
+				int r = total;
+
+				while (true) {
+
+					if (r < p)
+						break;
+
+					total += r / p;
+					r = r / p + r % p;
+
+				}
+
+				System.out.println(total);
+			}
+		}
+
+	}
+
+	public static class CutTheSticks {
+
+		public void solve() {
+			Scanner sc = new Scanner(System.in);
+
+			int n = sc.nextInt();
+			List<Integer> arr = new ArrayList<>();
+			for (int i = 0; i < n; i++) {
+				arr.add(sc.nextInt());
+			}
+
+			while (true) {
+				if (arr.size() != 0)
+					System.out.println(arr.size());
+
+				if (arr.size() <= 1)
+					break;
+
+				Collections.sort(arr);
+				int min = arr.get(0);
+
+				for (int i = arr.size() - 1; i >= 0; i--) {
+
+					int val = arr.get(i) - min;
+
+					if (val == 0) {
+						arr.remove(i);
+					} else {
+						arr.remove(i);
+						arr.add(i, val);
+					}
+
+				}
+
+			}
+
+		}
+	}
 
 	public static class ServiceLane {
 
