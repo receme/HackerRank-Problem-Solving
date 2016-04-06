@@ -1,10 +1,38 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Solutions {
+
+	public static class ServiceLane {
+
+		public void solve() {
+			Scanner sc = new Scanner(System.in);
+
+			int n = sc.nextInt();
+			int t = sc.nextInt();
+
+			List<Integer> arr = new ArrayList<>();
+
+			for (int i = 0; i < n; i++) {
+				arr.add(sc.nextInt());
+			}
+
+			for (int l = 0; l < t; l++) {
+
+				int p = sc.nextInt();
+				int q = sc.nextInt();
+
+				int ans = Collections.min(arr.subList(p, q + 1));
+
+				System.out.println(ans);
+			}
+		}
+
+	}
 
 	public static class SherlockAndSquares {
 
@@ -48,7 +76,6 @@ public class Solutions {
 			}
 		}
 	}
-	
 
 	public static class FindDigits {
 

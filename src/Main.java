@@ -2,13 +2,9 @@ import java.io.*;
 import java.util.*;
 import java.math.*;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
 public class Main {
 
 	public static void main(String[] args) {
-
-		
 
 	}
 
@@ -23,7 +19,5 @@ public class Main {
 		}
 
 	}
-
-	
 
 }
